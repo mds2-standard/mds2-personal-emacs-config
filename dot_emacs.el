@@ -17,6 +17,11 @@
     (load "suscolors-theme"))
 ;; (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
 
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
+
 (if (> (length (shell-command-to-string "which sbcl")) 0)
     (progn
       (message (concat "I think sbcl is at :: "
@@ -47,6 +52,17 @@
 (load "rust-mode")
 (autoload 'rust-mode "rust-mode"
   "Major mode for editing rust files" t)
+
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'racer-mode-hook #'company-mode)
+(add-hook 'rust-mode-hook
+	  (lambda ()
+	    (progn
+	      (define-key rust-mode-map (kbd "TAB")
+		#'company-indent-or-complete-common)
+	      (setq company-tooltip-align-annotations t))))
+
 (add-to-list 'load-path "~/.emacs.d/lisp/yaml-mode")
 (add-to-list 'load-path "~/.emacs.d/lisp/multiple-cursors.el")
 (add-to-list 'load-path "~/.emacs.d/lisp/markdown-mode")
