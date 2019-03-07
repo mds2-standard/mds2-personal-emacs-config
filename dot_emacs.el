@@ -13,11 +13,18 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/solarized-emacs")
 (add-to-list 'load-path "~/.emacs.d/lisp/dash.el")
+(add-to-list 'load-path "~/.emacs.d/lisp/lv")
+(add-to-list 'load-path "~/.emacs.d/lisp/with-editor")
+(add-to-list 'load-path "~/.emacs.d/lisp/transient")
+(add-to-list 'load-path "~/.emacs.d/lisp/transient/lisp")
+(add-to-list 'load-path "~/.emacs.d/lisp/magit")
+(add-to-list 'load-path "~/.emacs.d/lisp/magit/lisp")
 (add-to-list 'load-path "~/.emacs.d/lisp/SusColors-emacs")
 (if window-system
     (load "suscolors-theme"))
 ;; (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
 
+(load "magit")
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -47,7 +54,8 @@
 (load "clojure-mode")
 
 (when (member "Monaco" (font-family-list))
-  (add-to-list 'default-frame-alist '(font . "Monaco")))
+  (add-to-list 'default-frame-alist '(font . "Monaco"))
+  (set-face-attribute 'default (selected-frame) :height 150))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/rust-mode")
 (load "rust-mode")
@@ -89,4 +97,29 @@
 
 
 (require 'multiple-cursors)
+
+(defun big-font ()
+  (interactive)
+  (set-face-attribute 'default (selected-frame) :height 150))
+
+(defun wide-frame()
+  (interactive)
+  (set-frame-width (selected-frame) 120))
+
+(defun style-guide-frame()
+  (interactive)
+  (set-frame-width (selected-frame) 100))
+
+(defun resize-buf(wide)
+  (interactive "nhow-wide? ")
+  (set-frame-width (selected-frame) wide))
+
+(defun do-math(expr)
+  (interactive "sexpr:")
+  (insert (number-to-string
+	   (eval (car (read-from-string expr))))))
+
+(defun narrow-frame()
+  (interactive)
+  (set-frame-width (selected-frame) 80))
 
