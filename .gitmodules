@@ -52,3 +52,21 @@
 [submodule "emacs-company-jedi"]
 	path = emacs-company-jedi
 	url = https://github.com/syohex/emacs-company-jedi
+[submodule "emacs-jedi"]
+	path = emacs-jedi
+	url = https://github.com/tkf/emacs-jedi
+[submodule "emacs-epc"]
+	path = emacs-epc
+	url = https://github.com/kiwanami/emacs-epc
+[submodule "emacs-deferred"]
+	path = emacs-deferred
+	url = https://github.com/kiwanami/emacs-deferred
+[submodule "emacs-ctable"]
+	path = emacs-ctable
+	url = https://github.com/kiwanami/emacs-ctable
+[submodule "emacs-python-environment"]
+	path = emacs-python-environment
+	url = https://github.com/tkf/emacs-python-environment
+[submodule "hydra"]
+	path = hydra
+	url = https://github.com/abo-abo/hydra

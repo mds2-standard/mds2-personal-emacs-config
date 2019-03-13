@@ -13,7 +13,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/solarized-emacs")
 (add-to-list 'load-path "~/.emacs.d/lisp/dash.el")
-(add-to-list 'load-path "~/.emacs.d/lisp/lv")
+(add-to-list 'load-path "~/.emacs.d/lisp/hydra")
+(require 'lv)
 (add-to-list 'load-path "~/.emacs.d/lisp/with-editor")
 (add-to-list 'load-path "~/.emacs.d/lisp/transient")
 (add-to-list 'load-path "~/.emacs.d/lisp/transient/lisp")
@@ -25,6 +26,14 @@
 ;; (load "~/.emacs.d/lisp/solarized-emacs/solarized-dark-theme.el")
 
 (load "magit")
+
+(add-to-list 'load-path "~/.emacs.d/lisp/emacs-python-environment")
+(add-to-list 'load-path "~/.emacs.d/lisp/emacs-ctable")
+(add-to-list 'load-path "~/.emacs.d/lisp/emacs-deferred")
+(add-to-list 'load-path "~/.emacs.d/lisp/emacs-epc")
+(add-to-list 'load-path "~/.emacs.d/lisp/emacs-jedi")
+(add-to-list 'load-path "~/.emacs.d/lisp/emacs-company-jedi")
+(load "company-jedi")
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
