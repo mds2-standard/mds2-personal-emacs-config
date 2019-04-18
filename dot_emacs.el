@@ -14,7 +14,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/solarized-emacs")
 (add-to-list 'load-path "~/.emacs.d/lisp/dash.el")
 (add-to-list 'load-path "~/.emacs.d/lisp/hydra")
-(require 'lv)
+(load "lv")
 (add-to-list 'load-path "~/.emacs.d/lisp/with-editor")
 (add-to-list 'load-path "~/.emacs.d/lisp/transient")
 (add-to-list 'load-path "~/.emacs.d/lisp/transient/lisp")
